@@ -1,6 +1,3 @@
-Entendido\! Fiz o ajuste no README para refletir o uso de `Fetch` (em vez de Axios) e `CSS` puro para estilização.
-
------
 
 # Gestão de Alunos - Frontend (React) ⚽
 
