@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+Entendido\! Fiz o ajuste no README para refletir o uso de `Fetch` (em vez de Axios) e `CSS` puro para estilização.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-----
 
-## Available Scripts
+# Gestão de Alunos - Frontend (React) ⚽
 
-In the project directory, you can run:
+Este é o projeto frontend para o sistema de Gerenciamento de Alunos e Pagamentos, desenvolvido em React. Ele serve como interface de usuário para consumir a [API de Gestão da Escolinha (Backend)](https://www.google.com/search?q=https://github.com/seulink/gestao-escolinha-backend).
 
-### `npm start`
+## 🚀 Sobre o Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A interface permite que o administrador (ou usuário) do sistema realize as operações básicas de gerenciamento de alunos, como cadastrar, listar e atualizar informações, além de registrar e consultar pagamentos associados a cada aluno.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-----
 
-### `npm test`
+## 🛠️ Tecnologias Principais
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  * **React**: Biblioteca principal para a construção da interface.
+  * **React Router DOM**: Para gerenciamento de rotas (ex: /alunos, /pagamentos, /cadastrar-aluno).
+  * **Fetch API**: API nativa do navegador para realizar requisições HTTP para o backend.
+  * **CSS Módulo**: (Ou CSS puro) Para estilização dos componentes.
 
-### `npm run build`
+-----
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✨ Funcionalidades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  * ✅ **Gerenciamento de Alunos**:
+      * Formulário para cadastrar novos alunos.
+      * Página para listar todos os alunos cadastrados.
+      * (Opcional) Funcionalidades para editar e excluir alunos.
+  * ✅ **Gerenciamento de Pagamentos**:
+      * Formulário para registrar um novo pagamento (associado a um aluno).
+      * Página para visualizar o histórico de pagamentos de um aluno específico.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-----
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Como Executar o Projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Siga os passos abaixo para rodar o projeto em seu ambiente local.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Pré-requisitos
 
-## Learn More
+Antes de começar, você vai precisar ter instalado em sua máquina:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  * [Node.js](https://nodejs.org/en/) (versão 18 ou superior)
+  * [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+  * A **API Backend de Alunos/Pagamentos** deve estar rodando (por padrão, em `http://localhost:8080`).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Rodando a Aplicação
 
-### Code Splitting
+1.  **Clone o repositório:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```bash
+    git clone https://seurepositorio.com/gestao-escolinha-frontend.git
+    ```
 
-### Analyzing the Bundle Size
+2.  **Navegue até o diretório do projeto:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```bash
+    cd gestao-escolinha-frontend
+    ```
 
-### Making a Progressive Web App
+3.  **Instale as dependências:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ```bash
+    npm install
+    # ou
+    yarn install
+    ```
 
-### Advanced Configuration
+4.  **Configure as Variáveis de Ambiente:**
+    Crie um arquivo chamado `.env` na raiz do projeto e adicione a URL da sua API backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```env
+    # URL base da sua API Spring Boot
+    REACT_APP_API_URL=http://localhost:8080
+    ```
 
-### Deployment
+    *(**Nota:** O React requer o prefixo `REACT_APP_` para que a variável seja lida no código).*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5.  **Inicie o servidor de desenvolvimento:**
 
-### `npm run build` fails to minify
+    ```bash
+    npm start
+    # ou
+    yarn start
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6.  Pronto\! A aplicação estará rodando em `http://localhost:3000`.
+
+-----
+
+## 🔌 Conexão com a API
+
+Esta aplicação foi construída para consumir os endpoints da API de Alunos e Pagamentos usando a **Fetch API**. Todas as requisições (como `GET /api/alunos` ou `POST /api/pagamentos`) são feitas para o endereço configurado no arquivo `.env` (`http://localhost:8080`).
+
+-----
+
+## 📜 Scripts Disponíveis
+
+No diretório do projeto, você pode executar:
+
+  * **`npm start`**: Inicia a aplicação em modo de desenvolvimento.
+  * **`npm test`**: Executa os testes (se configurados).
+  * **`npm run build`**: Gera a versão de produção da aplicação na pasta `build`, pronta para deploy.
+
+-----
